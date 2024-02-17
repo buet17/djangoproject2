@@ -47,7 +47,35 @@ def contact(request):
     # return render(request, 'contact.html')
 
 def services(request):
-    return render(request, 'services.html')
+    # template_name=loader.get_template('index.html')
+    # return HttpResponse(template_name.render())
+
+    listStd=[
+        {
+            'name':'Mr. Shakhawat',
+            'age':22,
+            'id':170220240011
+        },
+        {
+            'name':'Mr. Rahim',
+            'age':24,
+            'id':170220240012
+        },
+        {
+            'name':'Mr. Karim',
+            'age':21,
+            'id':170220240013
+        },
+    ]
+    total_age=0
+    std_no=len(listStd)
+
+    for x in listStd:
+        total_age=total_age+x['age']
+    avg_age1=total_age/std_no
+    # print(avg_age1)
+    return render(request, 'services.html',{'AVG':avg_age1})
+    # return render(request, 'index.html',{'AVG':avg_age1})
 
 
 
