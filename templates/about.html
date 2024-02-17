@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>About</title>
 </head>
 <body>
     <a href="{% url 'home' %}">Home |</a>
@@ -11,29 +11,21 @@
     <a href="{% url 'contact' %}">Contact |</a>
     <a href="{% url 'services' %}">Services</a>
 <br>
-
-
 <h1>Average is: {{AVG}}</h1>
-<br>
-
-<table
-<tr>
-    <th>name</th>
-    <th>Average</th>
-    <th>ID</th>
-</tr>
-<tbody>
-    {% for student in students %}
-        <tr>
-            <td> {{student.name}} </td>
-            <td>{{student.age}}</td>
-            <td>{{student.id}}</td>
-        </tr>
-    {% endfor %}
-
-</tbody>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quas! Optio quis, natus officiis maiores,
          eius quos beatae earum, consequuntur perferendis pariatur sequi porro facilis? Voluptates illum repellendus eveniet aperiam.</p>
     
+         <br>
+         <!-- Direct value display in html page -->
+    {% with name="Md Noor Alam" %}
+           {{name}} 
+    {% endwith %}
+
+    <br>
+
+    {% if 1 == 1 %}
+        <h1>Hello World</h1>
+        
+    {% endif %}
 </body>
 </html>
