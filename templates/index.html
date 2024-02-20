@@ -19,16 +19,27 @@
 <table
 <tr>
     <th>name</th>
+    <th>SL.</th>
     <th>Average</th>
     <th>ID</th>
 </tr>
 <tbody>
-    {% for student in students %}
+    {% for student in students reversed %}
         <tr>
+            <td> {{forloop.counter0}} </td>
+            <td> {{forloop.counter}} </td>
             <td> {{student.name}} </td>
             <td>{{student.age}}</td>
             <td>{{student.id}}</td>
         </tr>
+    {% endfor %}
+
+ 
+
+    {% for x in students %}
+    <tr class="{% cycle rowvalue1 rowvalue2 %}">
+        ...
+    </tr>
     {% endfor %}
 
 </tbody>
