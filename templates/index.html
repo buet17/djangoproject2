@@ -1,3 +1,7 @@
+
+{% extends 'base.html' %} 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +10,26 @@
     <title>Index</title>
 </head>
 <body>
+    
     <a href="{% url 'home' %}">Home |</a>
     <a href="{% url 'about' %}">About |</a>
     <a href="{% url 'contact' %}">Contact |</a>
     <a href="{% url 'services' %}">Services</a>
 <br>
 
+
+
+{% block img %}
+    <img src="{% static 'images/atom.jpg' %}" alt="">
+{% endblock img %}
+    
+{% block content %}
+    <section id="home1">
+        <h1> Hello World, This is Home page</h1>
+    </section>
+{% endblock content %}
+    
+<p h1>Dhaka, Bangladesh</p>
 
 <h1>Average is: {{AVG}}</h1>
 <br>
@@ -34,17 +52,15 @@
         </tr>
     {% endfor %}
 
- 
 
-    {% for x in students %}
-    <tr class="{% cycle rowvalue1 rowvalue2 %}">
-        ...
-    </tr>
-    {% endfor %}
 
 </tbody>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quas! Optio quis, natus officiis maiores,
          eius quos beatae earum, consequuntur perferendis pariatur sequi porro facilis? Voluptates illum repellendus eveniet aperiam.</p>
     
+
+
+            
+
 </body>
 </html>

@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <script src="{% static 'js/msg.js' %}"> </script>
+
+   
+
+    <h1>Static Files</h1> 
+
+    <!-- JS Block -->
+    {% block js %}
+
+    {% endblock js %}
+
+    <!-- css Block -->
+    {% block content %}
+   
+    {% endblock content %}
+
+    <!-- img Block -->
+    {% block img %}
+
+    {% endblock img %}
+
+</body>
+</html>
