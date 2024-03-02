@@ -9,3 +9,6 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('services/', services, name='services'),
 ]
+
+# # Error handling
+# handler404='app1.views.custom_404'

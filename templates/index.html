@@ -10,11 +10,15 @@
     <title>Index</title>
 </head>
 <body>
-    
+
+    {% block url %}
+
     <a href="{% url 'home' %}">Home |</a>
     <a href="{% url 'about' %}">About |</a>
     <a href="{% url 'contact' %}">Contact |</a>
     <a href="{% url 'services' %}">Services</a>
+    
+    {% endblock url %}
 <br>
 
 
@@ -26,6 +30,8 @@
 {% block content %}
     <section id="home1">
         <h1> Hello World, This is Home page</h1>
+
+       
     </section>
 {% endblock content %}
     
@@ -33,28 +39,32 @@
 
 <h1>Average is: {{AVG}}</h1>
 <br>
-
+{% block data %}
 <table
 <tr>
-    <th>name</th>
     <th>SL.</th>
+    <th>name</th>
     <th>Average</th>
     <th>ID</th>
 </tr>
 <tbody>
-    {% for student in students reversed %}
-        <tr>
-            <td> {{forloop.counter0}} </td>
-            <td> {{forloop.counter}} </td>
-            <td> {{student.name}} </td>
-            <td>{{student.age}}</td>
-            <td>{{student.id}}</td>
-        </tr>
-    {% endfor %}
 
+
+
+
+        {% for student in students reversed %}
+            <tr>
+                <td> {{forloop.counter0}} </td>
+                <td> {{forloop.counter}} </td>
+                <td> {{student.name}} </td>
+                <td>{{student.age}}</td>
+                <td>{{student.id}}</td>
+            </tr>
+        {% endfor %}
 
 
 </tbody>
+{% endblock data %}
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quas! Optio quis, natus officiis maiores,
          eius quos beatae earum, consequuntur perferendis pariatur sequi porro facilis? Voluptates illum repellendus eveniet aperiam.</p>
     

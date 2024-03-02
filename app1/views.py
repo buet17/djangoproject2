@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
 from app1 import views
 
@@ -76,6 +76,18 @@ def services(request):
     # print(avg_age1)
     return render(request, 'services.html',{'AVG':avg_age1})
     # return render(request, 'index.html',{'AVG':avg_age1})
+
+# Routing ustom_404 view error handing
+def custom_404(request,exception):
+    return render(request, '404.html', status=404)
+    # return redirect('home')
+
+# Internal codding error is called 500 error
+def custom_500(request):
+    return render(request, '500.html', status=500)
+    # return redirect('home')
+
+
 
 
 

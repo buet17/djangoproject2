@@ -1,5 +1,4 @@
-function alertmsg(){
-    alert('Alert!');
-}
+// function alertmsg(){
+//     alert('Alert!');
+// }
 
-alertmsg()
