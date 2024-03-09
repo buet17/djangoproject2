@@ -1,6 +1,11 @@
 h1{
     margin: 0;
     padding: 100px 0;
-    background-color: dodgerblue;
+    background-color: red;
     color: whitesmoke;  
+}
+
+p{
+    background-color: aquamarine;
+    color: blue;
 }

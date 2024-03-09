@@ -15,15 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.static import serve
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app1.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root':settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root':settings.MEDIA_ROOT}),
 ]
 
-# Error handling 404
+# Routing handling 404
 handler404='app1.views.custom_404'
 
-# Error handling 505
+# Internal coding like block Error handling 500
 handler500='app1.views.custom_500'
